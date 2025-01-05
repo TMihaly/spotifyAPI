@@ -9,10 +9,10 @@ lines = str(lines)
 inputs = lines.split(',')
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
-    client_id=inputs[0],
+    client_id=inputs[0], # ezekhez ""-ben a client_id és a secret, ha nem akarsz külön mappát meghívni, akkor a felsőt törölni kell
     client_secret=inputs[1],
-    redirect_uri="http://localhost:8000/callback",
-    scope="user-library-read user-top-read"
+    redirect_uri="http://localhost:8000/callback", # callback a spotify authenticatornek
+    scope="user-library-read user-top-read" # jogok
 ))
 
 
